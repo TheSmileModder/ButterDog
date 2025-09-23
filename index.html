@@ -1,27 +1,35 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Butter Dog</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        background: #fafafa;
-        text-align: center;
-        padding: 50px;
-      }
-      video {
-        width: 100%;
-        max-width: 720px;
-        margin-top: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Butter Dog</h1>
-    <video controls>
-      <source src="butterdog.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Butter Dog</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <video id="butterdog" autoplay muted loop playsinline>
+    <source src="butterdog.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <script>
+    const vid = document.getElementById('butterdog');
+    document.body.addEventListener('click', () => {
+      vid.muted = false;
+      vid.play();
+    }, { once: true });
+  </script>
+</body>
 </html>
